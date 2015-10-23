@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<plugin id="cordova.android.tts.plugin" version="0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+		<name>androidTTS</name>
+		<js-module name="androidTTS" src="www/androidTTS.js">
+			<clobbers target="cordova.plugins.androidTTS" />
+		</js-module>
+		<platform name="android"><config-file parent="/*" target="res/xml/config.xml">
+				<feature name="androidTTS">
+					<param name="android-package" value="cordova.android.tts.plugin.androidTTS" />
+				</feature>
+			</config-file>
+			<config-file parent="/*" target="AndroidManifest.xml"></config-file>
+			<source-file src="src/android/androidTTS.java" target-dir="src/cordova/android/tts/plugin/androidTTS" />
+		</platform>
+	</plugin>
